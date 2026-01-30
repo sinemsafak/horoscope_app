@@ -14,7 +14,8 @@ class DetailScreen extends StatelessWidget {
         .toList();
 
     return Scaffold(
-      body: CustomScrollView(
+      body: SafeArea(
+      child:CustomScrollView(
         slivers: [
           SliverAppBar(
             expandedHeight: 320,
@@ -123,7 +124,7 @@ class DetailScreen extends StatelessWidget {
             ),
           ),
         ],
-      ),
+      )),
     );
   }
 }
