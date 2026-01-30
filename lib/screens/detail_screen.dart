@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import '../models/zodiac.dart';
+
 class DetailScreen extends StatelessWidget {
   final Zodiac zodiac;
 
