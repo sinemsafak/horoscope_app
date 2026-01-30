@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/zodiac.dart';
+import 'package:horoscope_app/models/zodiac.dart';
 
 class DetailScreen extends StatelessWidget {
   final Zodiac zodiac;
@@ -10,33 +10,49 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final features = zodiac.description
         .split("\n")
-        .where((e) => e.trim().isNotEmpty)
+        .where((e) => e.trim().isNotEmpty && !e.contains("Özellikleri"))
         .toList();
 
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight: 300,
+            expandedHeight: 320,
             pinned: true,
-            leading: IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () => Navigator.pop(context),
+            backgroundColor: Colors.black,
+            leading: Container(
+              margin: EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.5),
+                shape: BoxShape.circle,
+              ),
+              child: IconButton(
+                icon: Icon(Icons.arrow_back, color: Colors.white),
+                onPressed: () => Navigator.pop(context),
+              ),
             ),
             flexibleSpace: FlexibleSpaceBar(
-              title: Text(zodiac.name),
+              title: Text(
+                zodiac.name,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
               background: Stack(
                 fit: StackFit.expand,
                 children: [
-                  Image.asset(
-                    zodiac.image,
-                    fit: BoxFit.cover,
+                  ClipRRect(
+                    borderRadius: BorderRadius.vertical(
+                      bottom: Radius.circular(28),
+                    ),
+                    child: Image.asset(
+                      zodiac.image,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   Container(
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          Colors.black.withOpacity(0.7),
+                          Colors.black.withOpacity(0.85),
                           Colors.transparent,
                         ],
                         begin: Alignment.bottomCenter,
@@ -74,20 +90,31 @@ class DetailScreen extends StatelessWidget {
                   SizedBox(height: 12),
 
                   ...features.map((feature) {
-                    return Card(
-                      elevation: 4,
+                    return Container(
                       margin: EdgeInsets.symmetric(vertical: 6),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+                      padding: EdgeInsets.all(14),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(14),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 8,
+                            offset: Offset(0, 4),
+                          ),
+                        ],
                       ),
-                      child: ListTile(
-                        leading: Icon(
-                          Icons.star,
-                          color: Colors.orange,
-                        ),
-                        title: Text(
-                          feature.replaceAll(RegExp(r'^\d+\.\s*'), ''),
-                        ),
+                      child: Row(
+                        children: [
+                          Icon(Icons.auto_awesome, color: Colors.deepPurple),
+                          SizedBox(width: 12),
+                          Expanded(
+                            child: Text(
+                              feature.replaceAll(RegExp(r'^\d+\.\s*'), ''),
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ),
+                        ],
                       ),
                     );
                   }).toList(),
