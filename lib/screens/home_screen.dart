@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../data/zodiac_data.dart';
-import '../models/zodiac.dart';
 import 'detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {
