@@ -1,5 +1,14 @@
 # Horoscope App - Flutter Zodiac Application
 
+## Uygulama Görselleri
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6136654e-9f30-42cc-8efa-540b7c48b9fe" width="220"/>
+  <img src="https://github.com/user-attachments/assets/fdfa3ce2-d3f7-41ef-997e-1fb8758afda9" width="220"/>
+  <img src="https://github.com/user-attachments/assets/2bafea5c-351a-4baa-9e7f-8302f1313b89" width="220"/>
+  <img src="https://github.com/user-attachments/assets/acaee72a-b525-414f-956a-1cc3b9ccae11" width="220"/>
+</p>
+
+
 Modern ve estetik bir arayüze sahip, Flutter ile geliştirilmiş burç uygulaması.  
 Kullanıcılar tüm burçları grid şeklinde görüntüleyebilir ve her burcun detaylı özelliklerine modern bir detay sayfası üzerinden ulaşabilir.
 
@@ -68,10 +77,4 @@ Günlük burç yorumu entegrasyonu (API)
 ## Lisans:
 Bu proje eğitim ve portföy amaçlı geliştirilmiştir.
 
-## Uygulama Görselleri
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/6136654e-9f30-42cc-8efa-540b7c48b9fe" width="220"/>
-  <img src="https://github.com/user-attachments/assets/fdfa3ce2-d3f7-41ef-997e-1fb8758afda9" width="220"/>
-  <img src="https://github.com/user-attachments/assets/2bafea5c-351a-4baa-9e7f-8302f1313b89" width="220"/>
-  <img src="https://github.com/user-attachments/assets/acaee72a-b525-414f-956a-1cc3b9ccae11" width="220"/>
-</p>
+
